@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Tailwind CSS Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Custom Styles */
+        .animated {
+            animation-duration: 1s;
+            animation-fill-mode: both;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .btn-bounce {
+            animation-name: bounce;
+        }
+
+        .btn-scale:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-r from-purple-400 to-indigo-700 text-white">
+
+    <nav class="bg-gray-900">
+        <div class="container mx-auto py-4">
+            <a href="#" class="text-2xl font-bold">ARIVASANTHAN</a>
+            <ul class="flex space-x-4">
+                <li><a href="#" class="hover:text-gray-400">Home</a></li>
+                <li><a href="#" class="hover:text-gray-400">About</a></li>
+                <li><a href="#" class="hover:text-gray-400">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="text-center py-20">
+        <h1 class="text-4xl font-bold mb-4">Welcome to My Website</h1>
+        <p class="text-lg mb-8">Learn HTML and Tailwind CSS with us!</p>
+        <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-full inline-block btn-bounce">Get Started</a>
+    </header>
+
+    <section class="container mx-auto py-16">
+        <h2 class="text-3xl font-bold mb-8 text-center">Featured Topics</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white p-8 rounded-lg shadow-lg text-center">
+                <h3 class="text-xl font-bold mb-4">HTML Basics</h3>
+                <img src="https://th.bing.com/th/id/OIP.M08-BCRgHK2pCLjqZu9y6AHaEu?w=304&h=194&c=7&r=0&o=5&pid=1.7" alt="HTML Basics" class="mx-auto mb-4 rounded-lg">
+                <p class="mb-4">HTML is the standard markup language for creating web pages.</p>
+                <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full inline-block btn-scale">Learn More</a>
+            </div>
+            <div class="bg-white p-8 rounded-lg shadow-lg text-center">
+                <h3 class="text-xl font-bold mb-4 ">Tailwind CSS</h3>
+                <img src="https://th.bing.com/th/id/OIP.139pcmf5VMl9x3xBLWIsqAHaE7?w=292&h=194&c=7&r=0&o=5&pid=1.7" alt="Tailwind CSS" class="mx-auto mb-4 rounded-lg">
+                <p class="mb-4">Tailwind CSS is a utility-first CSS framework for rapidly building custom designs.</p>
+                <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full inline-block btn-scale">Learn More</a>
+            </div>
+            <div class="bg-white p-8 rounded-lg shadow-lg text-center">
+                <h3 class="text-xl font-bold mb-4">Responsive Design</h3>
+                <img src="data:image/jpeg;base64,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" alt="Responsive Design" class="mx-auto mb-4 rounded-lg">
+                <p class="mb-4">Learn how to create responsive websites that adapt to different screen sizes.</p>
+                <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full inline-block btn-scale">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 py-8 text-center">
+        <p>&copy; 2024 My Website. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>
